@@ -12,7 +12,7 @@ public final class EcoSkillsEventListener implements Listener {
     private void onGain(PlayerSkillXPGainEvent event) {
         final String TYPE = "Skills";
         final String NAMESPACE = "ECO_SKILLS";
-        final double[] totalMulti = {1};
+        final double[] totalMulti = {0};
 
         BoosterFindResult pResult = IBoosterAPI.INSTANCE.getCache(event.getPlayer()).getBoosterDataManager().findActiveBooster(TYPE, NAMESPACE);
         if (pResult instanceof BoosterFindResult.Success boosterResult) {
@@ -24,7 +24,9 @@ public final class EcoSkillsEventListener implements Listener {
             return null;
         }, () -> null);
 
-        event.setGainedXP(calculateAmount(event.getGainedXP(), totalMulti[0]));
+        if (totalMulti[0] > 0) {
+            event.setGainedXP(calculateAmount(event.getGainedXP(), totalMulti[0]));
+        }
     }
 
     private long calculateAmount(double amount, double multi) {
