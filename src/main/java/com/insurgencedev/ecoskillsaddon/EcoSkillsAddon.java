@@ -5,7 +5,7 @@ import org.insurgencedev.insurgenceboosters.api.addon.IBoostersAddon;
 import org.insurgencedev.insurgenceboosters.api.addon.InsurgenceBoostersAddon;
 import org.insurgencedev.insurgenceboosters.libs.fo.Common;
 
-@IBoostersAddon(name = "EcoSkillsAddon", version = "1.0.2", author = "InsurgenceDev", description = "EcoSkills Support")
+@IBoostersAddon(name = "EcoSkillsAddon", version = "1.0.3", author = "InsurgenceDev", description = "EcoSkills Support")
 public class EcoSkillsAddon extends InsurgenceBoostersAddon {
 
     @Override
